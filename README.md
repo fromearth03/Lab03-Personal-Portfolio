@@ -13,7 +13,7 @@ A five page personal portfolio built with HTML and CSS.
 | --- | --- |
 | `index.html` | Introduction, statistics, skills summary, about me |
 | `skills.html` | Programming languages, frameworks, tools and databases with proficiency bars |
-| `gallery.html` | Seven project screenshots |
+| `gallery.html` | Seven project screenshots, each opening full size |
 | `hobbies.html` | Astronomy, the rabies virus and chess |
 | `contact.html` | Email, phone, location and social links |
 
@@ -29,6 +29,9 @@ Lab03-Personal-Portfolio/
 ├── css/
 │   └── style.css
 ├── images/
+│   ├── projects/
+│   ├── hobbies/
+│   └── icons/
 ├── assets/
 │   └── resume.pdf
 └── README.md
@@ -44,10 +47,10 @@ git clone https://github.com/fromearth03/Lab03-Personal-Portfolio.git
 
 ## Image credits
 
-Project screenshots and the portrait are my own work.
+Project screenshots and the portraits are my own work.
 
 From Wikimedia Commons:
 
-- `hobby-astronomy.jpg` Carina Nebula, ESO, CC BY 4.0
-- `hobby-rabies.jpg` Rabies virions, CDC / Dr. Fred Murphy, public domain
-- `hobby-chess.jpg` Staunton set at the opening position
+- `astronomy-carina.jpg` Carina Nebula, ESO, CC BY 4.0
+- `rabies-virus.jpg` Rabies virions, CDC / Dr. Fred Murphy, public domain
+- `chess-board.jpg` Staunton set at the opening position

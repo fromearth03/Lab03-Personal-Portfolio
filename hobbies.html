@@ -1,108 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hobbies, Ali Akbar</title>
-  <meta name="description" content="The hobbies of Ali Akbar: astronomy, the rabies virus and chess.">
+  <title>Hobbies - Ali Akbar</title>
+  <meta name="description" content="Ali Akbar's hobbies: astronomy, the rabies virus and chess.">
   <meta name="author" content="Ali Akbar">
-  <link rel="icon" href="images/favicon.png">
+  <link rel="icon" href="images/portfolio.png">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </head>
 <body>
+  <nav class="side-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="hobbies.html" class="active">Hobbies</a>
+      <a href="contact.html">Contact</a>
+    <button type="button" class="theme-toggle-side" onclick="toggleTheme()"
+            aria-label="Toggle light and dark mode" data-theme-label>Dark</button>
+  </nav>
 
-  <header class="site-header">
-    <div class="container clearfix">
-      <a class="site-title" href="index.html">Ali Akbar <span>/ Backend &amp; Systems</span></a>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="hobbies.html" class="active">Hobbies</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <nav class="dock-nav" aria-label="Main navigation">
+    <div class="dock-inner">
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="hobbies.html" class="active">Hobbies</a>
+        <a href="contact.html">Contact</a>
+      <button type="button" onclick="toggleTheme()"
+              aria-label="Toggle light and dark mode" data-theme-label>Dark</button>
     </div>
-  </header>
+  </nav>
 
-  <div class="main">
-    <div class="container">
-
+  <main class="main">
       <header class="card page-head">
-        <h1>Hobbies and Interests</h1>
+        <h1>Hobbies &amp; Interests</h1>
         <p>
-          Three things I do when I am not writing code, and all three are the reason I write the code I do.
+          Three things I do when I am not writing code - and, honestly, all three are the reason I write
+          the code I do.
         </p>
       </header>
 
-      <section class="card hobby clearfix">
-          <div class="hobby-photo-left">
-            <img src="images/hobby-astronomy.jpg" alt="The Carina Nebula" width="480" height="300">
+      <div class="wrap">
+      <section class="card hobby">
+        <div class="hobby-media">
+          <img src="images/hobbies/astronomy-carina.jpg" alt="The Carina Nebula" loading="lazy">
+        </div>
+        <div class="hobby-body">
+          <h2>Studying Astronomy</h2>
+          <p>Astronomy is the hobby that pulled me toward space systems in the first place. I spend evenings reading survey papers, working through orbital mechanics problems and tracking what the James Webb and Hubble telescopes have released this month.</p>
+          <p>It is also the hobby that feeds back into my work - the CubeSat remote-sensing simulation and the StellarTrace search engine both started as curiosity about how we collect and index what we observe.</p>
+          <div class="facts">
+            <div class="fact"><span class="fact-mark">01</span><span><b>A day on Venus is longer than its year.</b> Venus rotates once every 243 Earth days but orbits the Sun in 225, and it spins backwards.</span></div>
+            <div class="fact"><span class="fact-mark">02</span><span><b>Neutron star matter is impossibly dense.</b> A single teaspoon weighs roughly a billion tonnes - about the mass of Mount Everest.</span></div>
+            <div class="fact"><span class="fact-mark">03</span><span><b>The Milky Way and Andromeda will merge.</b> In about 4.5 billion years, though the stars are so sparse that almost none will collide.</span></div>
+            <div class="fact"><span class="fact-mark">04</span><span><b>Sunlight is thousands of years old.</b> A photon takes 8 minutes to reach us, but spent millennia scattering out of the Sun's core.</span></div>
           </div>
-          <div class="hobby-body">
-            <h2>Studying Astronomy</h2>
-            <p>Astronomy is the hobby that pulled me toward space systems in the first place. I spend evenings reading survey papers, working through orbital mechanics problems and tracking what the James Webb and Hubble telescopes have released this month.</p>
-            <p>It is also the hobby that feeds back into my work. The CubeSat remote sensing simulation and the StellarTrace search engine both started as curiosity about how we collect and index what we observe.</p>
-            <ul class="hobby-facts">
-              <li><strong>A day on Venus is longer than its year.</strong> Venus rotates once every 243 Earth days but orbits the Sun in 225, and it spins backwards.</li>
-              <li><strong>Neutron star matter is impossibly dense.</strong> A single teaspoon weighs roughly a billion tonnes, about the mass of Mount Everest.</li>
-              <li><strong>The Milky Way and Andromeda will merge.</strong> In about 4.5 billion years, though the stars are so sparse that almost none will collide.</li>
-              <li><strong>Sunlight is thousands of years old.</strong> A photon takes 8 minutes to reach us, but spent millennia scattering out of the Sun's core.</li>
-            </ul>
-          </div>
+        </div>
       </section>
 
-      <section class="card hobby clearfix">
-          <div class="hobby-photo-right">
-            <img src="images/hobby-rabies.jpg" alt="Rabies virions under an electron microscope" width="480" height="300">
+      <section class="card hobby flip">
+        <div class="hobby-media">
+          <img src="images/hobbies/rabies-virus.jpg" alt="Rabies virions under an electron microscope" loading="lazy">
+        </div>
+        <div class="hobby-body">
+          <h2>Reading About the Rabies Virus</h2>
+          <p>My second obsession is virology, and specifically the rabies virus. It is the most lethal virus known to medicine and yet almost entirely preventable - that contradiction is what keeps me reading about it.</p>
+          <p>What fascinates me is the mechanism: the virus avoids the bloodstream entirely and travels along peripheral nerves to the brain, which is why it stays invisible to the immune system for so long and why vaccination still works after a bite.</p>
+          <div class="facts">
+            <div class="fact"><span class="fact-mark">01</span><span><b>Roughly 100% fatal once symptoms appear.</b> Fewer than twenty unvaccinated survivors have ever been documented.</span></div>
+            <div class="fact"><span class="fact-mark">02</span><span><b>It travels by nerve, not by blood.</b> Retrograde axonal transport carries it to the brain at 12-100&nbsp;mm a day.</span></div>
+            <div class="fact"><span class="fact-mark">03</span><span><b>The incubation period can last months.</b> Which is exactly why post-exposure treatment works - there is time to beat it there.</span></div>
+            <div class="fact"><span class="fact-mark">04</span><span><b>The bullet shape is diagnostic.</b> Rhabdoviruses are instantly recognisable in an electron micrograph, like the one shown here.</span></div>
           </div>
-          <div class="hobby-body">
-            <h2>Reading About the Rabies Virus</h2>
-            <p>My second obsession is virology, and specifically the rabies virus. It is the most lethal virus known to medicine and yet almost entirely preventable, and that contradiction is what keeps me reading about it.</p>
-            <p>What fascinates me is the mechanism. The virus avoids the bloodstream entirely and travels along peripheral nerves to the brain, which is why it stays invisible to the immune system for so long and why vaccination still works after a bite.</p>
-            <ul class="hobby-facts">
-              <li><strong>Roughly 100% fatal once symptoms appear.</strong> Fewer than twenty unvaccinated survivors have ever been documented.</li>
-              <li><strong>It travels by nerve, not by blood.</strong> Retrograde axonal transport carries it to the brain at 12 to 100 mm a day.</li>
-              <li><strong>The incubation period can last months.</strong> Which is exactly why post exposure treatment works, there is time to beat it there.</li>
-              <li><strong>The bullet shape is diagnostic.</strong> Rhabdoviruses are instantly recognisable in an electron micrograph, like the one shown here.</li>
-            </ul>
-          </div>
+        </div>
       </section>
 
-      <section class="card hobby clearfix">
-          <div class="hobby-photo-left">
-            <img src="images/hobby-chess.jpg" alt="A chess board at the opening position" width="480" height="300">
+      <section class="card hobby">
+        <div class="hobby-media">
+          <img src="images/hobbies/chess-board.jpg" alt="A chess board at the opening position" loading="lazy">
+        </div>
+        <div class="hobby-body">
+          <h2>Playing Chess</h2>
+          <p>Chess is what I play when I want the same feeling as debugging without the debugger. Calculate the forcing lines first, evaluate the resulting position honestly, and accept that a plan built on a wrong assumption collapses however elegant it looked.</p>
+          <p>I play mostly rapid, with a stubborn preference for closed positions where the game is decided by structure rather than tactics. Studying endgames has been the single biggest improvement to my play, and to my patience.</p>
+          <div class="facts">
+            <div class="fact"><span class="fact-mark">01</span><span><b>The opening move count explodes immediately.</b> There are 400 distinct positions after one move each, and over 9 million after three.</span></div>
+            <div class="fact"><span class="fact-mark">02</span><span><b>The Shannon number dwarfs the universe.</b> Around 10^120 possible games, against roughly 10^80 atoms in the observable universe.</span></div>
+            <div class="fact"><span class="fact-mark">03</span><span><b>The longest forced mate runs 549 moves.</b> Found by endgame tablebases, and entirely incomprehensible to a human player.</span></div>
+            <div class="fact"><span class="fact-mark">04</span><span><b>Castling was standardised late.</b> The modern two-square king move only settled across Europe in the 17th century.</span></div>
           </div>
-          <div class="hobby-body">
-            <h2>Playing Chess</h2>
-            <p>Chess is what I play when I want the same feeling as debugging without the debugger. Calculate the forcing lines first, evaluate the resulting position honestly, and accept that a plan built on a wrong assumption collapses however elegant it looked.</p>
-            <p>I play mostly rapid, with a stubborn preference for closed positions where the game is decided by structure rather than tactics. Studying endgames has been the single biggest improvement to my play, and to my patience.</p>
-            <ul class="hobby-facts">
-              <li><strong>The opening move count explodes immediately.</strong> There are 400 distinct positions after one move each, and over 9 million after three.</li>
-              <li><strong>The Shannon number dwarfs the universe.</strong> Around 10^120 possible games, against roughly 10^80 atoms in the observable universe.</li>
-              <li><strong>The longest forced mate runs 549 moves.</strong> Found by endgame tablebases, and entirely incomprehensible to a human player.</li>
-              <li><strong>Castling was standardised late.</strong> The modern two square king move only settled across Europe in the 17th century.</li>
-            </ul>
-          </div>
+        </div>
       </section>
+      </div>
 
 
-    </div>
-  </div>
+      <footer class="site-footer">
+        <p>&copy; 2026 Ali Akbar &middot; Islamabad, Pakistan</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="skills.html">Skills</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="hobbies.html">Hobbies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </footer>
+  </main>
 
-  <footer class="site-footer">
-    <div class="container clearfix">
-      <p class="footer-text">&copy; 2026 Ali Akbar, Islamabad, Pakistan</p>
-      <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="hobbies.html">Hobbies</a></li>
-          <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </footer>
-
+  <script>
+    function paintThemeLabels() {
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      var nodes = document.querySelectorAll('[data-theme-label]');
+      for (var i = 0; i < nodes.length; i++) { nodes[i].textContent = light ? 'Light' : 'Dark'; }
+    }
+    function toggleTheme() {
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      var next = light ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+      paintThemeLabels();
+    }
+    paintThemeLabels();
+  </script>
 </body>
 </html>

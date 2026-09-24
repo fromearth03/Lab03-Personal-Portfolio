@@ -1,205 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Skills, Ali Akbar</title>
+  <title>Personal Skills - Ali Akbar</title>
   <meta name="description" content="Programming languages, frameworks, tools and databases used by Ali Akbar.">
   <meta name="author" content="Ali Akbar">
-  <link rel="icon" href="images/favicon.png">
+  <link rel="icon" href="images/portfolio.png">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </head>
 <body>
+  <nav class="side-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="contact.html">Contact</a>
+    <button type="button" class="theme-toggle-side" onclick="toggleTheme()"
+            aria-label="Toggle light and dark mode" data-theme-label>Dark</button>
+  </nav>
 
-  <header class="site-header">
-    <div class="container clearfix">
-      <a class="site-title" href="index.html">Ali Akbar <span>/ Backend &amp; Systems</span></a>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="skills.html" class="active">Skills</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="hobbies.html">Hobbies</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <nav class="dock-nav" aria-label="Main navigation">
+    <div class="dock-inner">
+        <a href="index.html">Home</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="contact.html">Contact</a>
+      <button type="button" onclick="toggleTheme()"
+              aria-label="Toggle light and dark mode" data-theme-label>Dark</button>
     </div>
-  </header>
+  </nav>
 
-  <div class="main">
-    <div class="container">
-
+  <main class="main">
       <header class="card page-head">
         <h1>Personal Skills</h1>
         <p>The programming languages, frameworks, tools and databases I build with.</p>
       </header>
 
-      <div class="clearfix">
+      <div class="wrap">
+        <div class="skills-grid">
         <section class="card skill-panel">
           <h2>Programming Languages</h2>
-          <div class="meter clearfix">
-            <span class="meter-name">C++</span>
-            <span class="meter-level">Advanced, 90%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">C++</span>
+              <span class="meter-level">Advanced &middot; 90%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-90"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Java</span>
-            <span class="meter-level">Advanced, 85%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Java</span>
+              <span class="meter-level">Advanced &middot; 85%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-85"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">JavaScript</span>
-            <span class="meter-level">Advanced, 80%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">JavaScript</span>
+              <span class="meter-level">Advanced &middot; 80%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-80"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">TypeScript</span>
-            <span class="meter-level">Proficient, 75%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">TypeScript</span>
+              <span class="meter-level">Proficient &middot; 75%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-75"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">SQL</span>
-            <span class="meter-level">Proficient, 75%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">SQL</span>
+              <span class="meter-level">Proficient &middot; 75%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-75"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Rust</span>
-            <span class="meter-level">Intermediate, 65%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Rust</span>
+              <span class="meter-level">Intermediate &middot; 65%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-65"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Go</span>
-            <span class="meter-level">Intermediate, 55%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Go</span>
+              <span class="meter-level">Intermediate &middot; 55%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-55"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">HTML &amp; CSS</span>
-            <span class="meter-level">Advanced, 85%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">HTML &amp; CSS</span>
+              <span class="meter-level">Advanced &middot; 85%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-85"></div></div>
           </div>
         </section>
-        <section class="card skill-panel skill-panel-right">
+        <section class="card skill-panel">
           <h2>Frameworks &amp; Libraries</h2>
-          <div class="meter clearfix">
-            <span class="meter-name">Spring Boot</span>
-            <span class="meter-level">Advanced, 85%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Spring Boot</span>
+              <span class="meter-level">Advanced &middot; 85%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-85"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">React</span>
-            <span class="meter-level">Advanced, 80%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">React</span>
+              <span class="meter-level">Advanced &middot; 80%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-80"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Three.js</span>
-            <span class="meter-level">Proficient, 70%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Three.js</span>
+              <span class="meter-level">Proficient &middot; 70%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-70"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Tailwind CSS</span>
-            <span class="meter-level">Proficient, 75%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Tailwind CSS</span>
+              <span class="meter-level">Proficient &middot; 75%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-75"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">JavaFX</span>
-            <span class="meter-level">Advanced, 80%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">JavaFX</span>
+              <span class="meter-level">Advanced &middot; 80%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-80"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Swing</span>
-            <span class="meter-level">Advanced, 80%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Swing</span>
+              <span class="meter-level">Advanced &middot; 80%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-80"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Node.js</span>
-            <span class="meter-level">Intermediate, 60%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Node.js</span>
+              <span class="meter-level">Intermediate &middot; 60%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-60"></div></div>
           </div>
         </section>
         <section class="card skill-panel">
           <h2>Tools &amp; Platforms</h2>
-          <div class="meter clearfix">
-            <span class="meter-name">Git &amp; GitHub</span>
-            <span class="meter-level">Advanced, 90%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Git &amp; GitHub</span>
+              <span class="meter-level">Advanced &middot; 90%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-90"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Linux</span>
-            <span class="meter-level">Advanced, 85%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Linux</span>
+              <span class="meter-level">Advanced &middot; 85%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-85"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">VS Code</span>
-            <span class="meter-level">Advanced, 90%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">VS Code</span>
+              <span class="meter-level">Advanced &middot; 90%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-90"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Maven</span>
-            <span class="meter-level">Proficient, 75%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Maven</span>
+              <span class="meter-level">Proficient &middot; 75%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-75"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">AGI STK</span>
-            <span class="meter-level">Proficient, 70%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">AGI STK</span>
+              <span class="meter-level">Proficient &middot; 70%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-70"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Oracle VM</span>
-            <span class="meter-level">Intermediate, 65%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Oracle VM</span>
+              <span class="meter-level">Intermediate &middot; 65%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-65"></div></div>
           </div>
         </section>
-        <section class="card skill-panel skill-panel-right">
+        <section class="card skill-panel">
           <h2>Databases &amp; Systems</h2>
-          <div class="meter clearfix">
-            <span class="meter-name">PostgreSQL</span>
-            <span class="meter-level">Advanced, 80%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">PostgreSQL</span>
+              <span class="meter-level">Advanced &middot; 80%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-80"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Flyway Migrations</span>
-            <span class="meter-level">Proficient, 70%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Flyway Migrations</span>
+              <span class="meter-level">Proficient &middot; 70%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-70"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">System Design</span>
-            <span class="meter-level">Proficient, 75%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">System Design</span>
+              <span class="meter-level">Proficient &middot; 75%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-75"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Compiler Design</span>
-            <span class="meter-level">Advanced, 80%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Compiler Design</span>
+              <span class="meter-level">Advanced &middot; 80%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-80"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">Data Structures</span>
-            <span class="meter-level">Advanced, 85%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">Data Structures &amp; Algorithms</span>
+              <span class="meter-level">Advanced &middot; 85%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-85"></div></div>
           </div>
-          <div class="meter clearfix">
-            <span class="meter-name">REST &amp; JWT Auth</span>
-            <span class="meter-level">Advanced, 80%</span>
+          <div class="meter">
+            <div class="meter-top">
+              <span class="meter-name">REST &amp; JWT Auth</span>
+              <span class="meter-level">Advanced &middot; 80%</span>
+            </div>
             <div class="meter-track"><div class="meter-fill fill-80"></div></div>
           </div>
         </section>
+        </div>
       </div>
 
 
-    </div>
-  </div>
+      <footer class="site-footer">
+        <p>&copy; 2026 Ali Akbar &middot; Islamabad, Pakistan</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="skills.html">Skills</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="hobbies.html">Hobbies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </footer>
+  </main>
 
-  <footer class="site-footer">
-    <div class="container clearfix">
-      <p class="footer-text">&copy; 2026 Ali Akbar, Islamabad, Pakistan</p>
-      <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="hobbies.html">Hobbies</a></li>
-          <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </footer>
-
+  <script>
+    function paintThemeLabels() {
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      var nodes = document.querySelectorAll('[data-theme-label]');
+      for (var i = 0; i < nodes.length; i++) { nodes[i].textContent = light ? 'Light' : 'Dark'; }
+    }
+    function toggleTheme() {
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      var next = light ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+      paintThemeLabels();
+    }
+    paintThemeLabels();
+  </script>
 </body>
 </html>

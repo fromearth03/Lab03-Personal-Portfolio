@@ -1,144 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Gallery, Ali Akbar</title>
-  <meta name="description" content="Screenshots from the software projects built by Ali Akbar.">
+  <title>Image Gallery - Ali Akbar</title>
+  <meta name="description" content="Screenshots from Ali Akbar's software projects.">
   <meta name="author" content="Ali Akbar">
-  <link rel="icon" href="images/favicon.png">
+  <link rel="icon" href="images/portfolio.png">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </head>
 <body>
+  <nav class="side-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="contact.html">Contact</a>
+    <button type="button" class="theme-toggle-side" onclick="toggleTheme()"
+            aria-label="Toggle light and dark mode" data-theme-label>Dark</button>
+  </nav>
 
-  <header class="site-header">
-    <div class="container clearfix">
-      <a class="site-title" href="index.html">Ali Akbar <span>/ Backend &amp; Systems</span></a>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="gallery.html" class="active">Gallery</a></li>
-          <li><a href="hobbies.html">Hobbies</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <nav class="dock-nav" aria-label="Main navigation">
+    <div class="dock-inner">
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="contact.html">Contact</a>
+      <button type="button" onclick="toggleTheme()"
+              aria-label="Toggle light and dark mode" data-theme-label>Dark</button>
     </div>
-  </header>
+  </nav>
 
-  <div class="main">
-    <div class="container">
-
+  <main class="main">
       <header class="card page-head">
         <h1>Image Gallery</h1>
-        <p>Screenshots from the projects I have built, arranged three to a row.</p>
+        <p>Screenshots from the projects I have built. Click any image to open it full size.</p>
       </header>
 
-      <section class="panel">
-        <h2 class="section-title">Project Screenshots</h2>
-        <div class="clearfix">
-        <figure class="card gallery-item">
-          <img src="images/stellartrace-search.jpg" alt="Screenshot of StellarTrace Search Interface" width="420" height="190">
-          <figcaption class="gallery-caption">
-            <p class="gallery-category">Systems Engineering</p>
-            <h2>StellarTrace Search Interface</h2>
-            <p>Landing view of my ArXiv research paper search engine. Each planet is a Three.js body, and selecting one filters the corpus before the C++ backend ranks the results.</p>
-            <ul class="gallery-links clearfix">
-              <li><a href="https://youtu.be/BOFRgs9mFU8" target="_blank">Demo</a></li>
-              <li><a href="https://stellar-trace.tech" target="_blank">Live</a></li>
-            </ul>
-          </figcaption>
-        </figure>
-        <figure class="card gallery-item">
-          <img src="images/stellartrace-results.jpg" alt="Screenshot of StellarTrace Ranked Results" width="420" height="190">
-          <figcaption class="gallery-caption">
-            <p class="gallery-category">Systems Engineering</p>
-            <h2>StellarTrace Ranked Results</h2>
-            <p>Results returned by the C++ engine, which implements inverted indexing and Google style ranking over ArXiv metadata.</p>
-            <ul class="gallery-links clearfix">
-              <li><a href="https://github.com/fromearth03/StellarTrace-Front-end.git" target="_blank">Frontend</a></li>
-              <li><a href="https://github.com/fromearth03/StellarTrace.git" target="_blank">Backend</a></li>
-            </ul>
-          </figcaption>
-        </figure>
-        <figure class="card gallery-item">
-          <img src="images/rideflow-dashboard.jpg" alt="Screenshot of RideFlow Admin Dashboard" width="420" height="190">
-          <figcaption class="gallery-caption">
-            <p class="gallery-category">Full Stack</p>
-            <h2>RideFlow Admin Dashboard</h2>
-            <p>Role based administrator view of the ride management platform, with live fleet counters and a recent rides table backed by PostgreSQL and Flyway migrations.</p>
-            <ul class="gallery-links clearfix">
-              <li><a href="https://rideflow.aliakbar.systems/" target="_blank">Live</a></li>
-              <li><a href="https://github.com/fromearth03/RideFlow" target="_blank">Code</a></li>
-            </ul>
-          </figcaption>
-        </figure>
-        <figure class="card gallery-item">
-          <img src="images/cubesat-simulation.jpg" alt="Screenshot of CubeSat Remote Sensing Simulation" width="420" height="190">
-          <figcaption class="gallery-caption">
-            <p class="gallery-category">Space Systems</p>
-            <h2>CubeSat Remote Sensing Simulation</h2>
-            <p>An AGI STK simulation over the Baltoro, Biafo and Siachen glaciers, showing the orbital track and the sensor footprint used for coverage analysis.</p>
-            <ul class="gallery-links clearfix">
-              <li><a href="https://youtu.be/m5Z3xzQ-bHU" target="_blank">Demo</a></li>
-            </ul>
-          </figcaption>
-        </figure>
-        <figure class="card gallery-item">
-          <img src="images/brainfuck-compiler.jpg" alt="Screenshot of Brainf*ck Interpreter and RISC-V Compiler" width="420" height="190">
-          <figcaption class="gallery-caption">
-            <p class="gallery-category">Compiler Design</p>
-            <h2>Brainf*ck Interpreter and RISC-V Compiler</h2>
-            <p>The interpreter running a program alongside the generated RISC-V assembly, produced by the code generator I wrote in C++.</p>
-            <ul class="gallery-links clearfix">
-              <li><a href="https://youtu.be/4FCjndDlJYM" target="_blank">Demo</a></li>
-              <li><a href="https://github.com/fromearth03/Brain-F-Interpreter-and-RISC-V-Compiler.git" target="_blank">Code</a></li>
-            </ul>
-          </figcaption>
-        </figure>
-        <figure class="card gallery-item">
-          <img src="images/wardrobe-manager.jpg" alt="Screenshot of AI Wardrobe Manager" width="420" height="190">
-          <figcaption class="gallery-caption">
-            <p class="gallery-category">Desktop Application</p>
-            <h2>AI Wardrobe Manager</h2>
-            <p>A Java Swing desktop client that catalogues clothing items and proposes outfit combinations from stored preferences.</p>
-            <ul class="gallery-links clearfix">
-              <li><a href="https://youtu.be/w-Py5XX67ws" target="_blank">Demo</a></li>
-              <li><a href="https://github.com/fromearth03/Wardrobe-Manager.git" target="_blank">Code</a></li>
-            </ul>
-          </figcaption>
-        </figure>
-        <figure class="card gallery-item">
-          <img src="images/futurelens-system.jpg" alt="Screenshot of FutureLens Prediction System" width="420" height="190">
-          <figcaption class="gallery-caption">
-            <p class="gallery-category">Prediction System</p>
-            <h2>FutureLens Prediction System</h2>
-            <p>Forecast dashboard covering stock markets, cryptocurrency, energy consumption and population growth, each projected with statistical models over historical series.</p>
-            <ul class="gallery-links clearfix">
-              <li><a href="https://youtu.be/6Pe_kAIO26g" target="_blank">Demo</a></li>
-              <li><a href="https://github.com/fromearth03/Future-Lens.git" target="_blank">Code</a></li>
-            </ul>
-          </figcaption>
-        </figure>
+      <section class="panel wrap" id="gallery">
+        <div class="gallery-grid">
+          <figure class="card shot">
+            <a class="shot-frame" href="#shot-stellar-1">
+              <img src="images/projects/stellar-trace1.jpg" alt="StellarTrace - Search Interface" loading="lazy">
+            </a>
+            <figcaption class="shot-body">
+              <div class="shot-cat">Systems Engineering</div>
+              <h2 class="shot-title">StellarTrace - Search Interface</h2>
+              <p class="shot-caption">Landing view of my ArXiv research-paper search engine. Each planet is a Three.js body; selecting one filters the corpus before the C++ backend ranks the results.</p>
+              <div class="shot-tags">
+              <span>C++</span>
+              <span>React</span>
+              <span>Three.js</span>
+              </div>
+              <div class="shot-links">
+              <a href="https://youtu.be/BOFRgs9mFU8" target="_blank" rel="noopener noreferrer" class="solid">Demo</a>
+              <a href="https://stellar-trace.tech" target="_blank" rel="noopener noreferrer">Live</a>
+              <a href="https://github.com/fromearth03/StellarTrace.git" target="_blank" rel="noopener noreferrer">Code</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card shot">
+            <a class="shot-frame" href="#shot-stellar-2">
+              <img src="images/projects/stellar-trace2.jpg" alt="StellarTrace - Ranked Results" loading="lazy">
+            </a>
+            <figcaption class="shot-body">
+              <div class="shot-cat">Systems Engineering</div>
+              <h2 class="shot-title">StellarTrace - Ranked Results</h2>
+              <p class="shot-caption">Results returned by the C++ engine, which implements inverted indexing and Google-style ranking over ArXiv metadata.</p>
+              <div class="shot-tags">
+              <span>C++</span>
+              <span>Search Ranking</span>
+              </div>
+              <div class="shot-links">
+              <a href="https://github.com/fromearth03/StellarTrace-Front-end.git" target="_blank" rel="noopener noreferrer">Frontend</a>
+              <a href="https://github.com/fromearth03/StellarTrace.git" target="_blank" rel="noopener noreferrer">Backend</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card shot">
+            <a class="shot-frame" href="#shot-rideflow">
+              <img src="images/projects/rideflow.jpg" alt="RideFlow - Admin Dashboard" loading="lazy">
+            </a>
+            <figcaption class="shot-body">
+              <div class="shot-cat">Full Stack</div>
+              <h2 class="shot-title">RideFlow - Admin Dashboard</h2>
+              <p class="shot-caption">Role-based administrator view of the ride management platform: live fleet counters and a recent-rides table backed by PostgreSQL with Flyway migrations.</p>
+              <div class="shot-tags">
+              <span>Spring Boot</span>
+              <span>React</span>
+              <span>Rust</span>
+              <span>PostgreSQL</span>
+              </div>
+              <div class="shot-links">
+              <a href="https://rideflow.aliakbar.systems/" target="_blank" rel="noopener noreferrer" class="solid">Live</a>
+              <a href="https://github.com/fromearth03/RideFlow" target="_blank" rel="noopener noreferrer">Backend</a>
+              <a href="https://github.com/fromearth03/RideFlow-FrontEnd" target="_blank" rel="noopener noreferrer">Frontend</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card shot">
+            <a class="shot-frame" href="#shot-cubesat">
+              <img src="images/projects/cubesat.jpg" alt="CubeSat Remote Sensing Simulation" loading="lazy">
+            </a>
+            <figcaption class="shot-body">
+              <div class="shot-cat">Space Systems</div>
+              <h2 class="shot-title">CubeSat Remote Sensing Simulation</h2>
+              <p class="shot-caption">An AGI STK simulation over the Baltoro, Biafo and Siachen glaciers, showing the orbital track and the sensor footprint used for coverage analysis.</p>
+              <div class="shot-tags">
+              <span>AGI STK</span>
+              <span>Orbital Mechanics</span>
+              </div>
+              <div class="shot-links">
+              <a href="https://youtu.be/m5Z3xzQ-bHU" target="_blank" rel="noopener noreferrer" class="solid">Demo</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card shot">
+            <a class="shot-frame" href="#shot-brainfuck">
+              <img src="images/projects/brainfuck.jpg" alt="Brainf*ck Interpreter and RISC-V Compiler" loading="lazy">
+            </a>
+            <figcaption class="shot-body">
+              <div class="shot-cat">Compiler Design</div>
+              <h2 class="shot-title">Brainf*ck Interpreter &amp; RISC-V Compiler</h2>
+              <p class="shot-caption">The interpreter running a program alongside the generated RISC-V assembly, produced by the code generator I wrote in C++.</p>
+              <div class="shot-tags">
+              <span>C++</span>
+              <span>Compiler Design</span>
+              </div>
+              <div class="shot-links">
+              <a href="https://youtu.be/4FCjndDlJYM" target="_blank" rel="noopener noreferrer" class="solid">Demo</a>
+              <a href="https://github.com/fromearth03/Brain-F-Interpreter-and-RISC-V-Compiler.git" target="_blank" rel="noopener noreferrer">Code</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card shot">
+            <a class="shot-frame" href="#shot-wardrobe">
+              <img src="images/projects/wardrobe.jpg" alt="AI Wardrobe Manager" loading="lazy">
+            </a>
+            <figcaption class="shot-body">
+              <div class="shot-cat">Desktop Application</div>
+              <h2 class="shot-title">AI Wardrobe Manager</h2>
+              <p class="shot-caption">A Java Swing desktop client that catalogues clothing items and proposes outfit combinations from stored preferences.</p>
+              <div class="shot-tags">
+              <span>Java</span>
+              <span>Swing</span>
+              </div>
+              <div class="shot-links">
+              <a href="https://youtu.be/w-Py5XX67ws" target="_blank" rel="noopener noreferrer" class="solid">Demo</a>
+              <a href="https://github.com/fromearth03/Wardrobe-Manager.git" target="_blank" rel="noopener noreferrer">Code</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="card shot">
+            <a class="shot-frame" href="#shot-futurelens">
+              <img src="images/projects/futurelens.jpg" alt="FutureLens Prediction System" loading="lazy">
+            </a>
+            <figcaption class="shot-body">
+              <div class="shot-cat">Prediction System</div>
+              <h2 class="shot-title">FutureLens Prediction System</h2>
+              <p class="shot-caption">Forecast dashboard covering stock markets, cryptocurrency, energy consumption and population growth, each projected with statistical models over historical series.</p>
+              <div class="shot-tags">
+              <span>Statistical Models</span>
+              <span>Data Analysis</span>
+              </div>
+              <div class="shot-links">
+              <a href="https://youtu.be/6Pe_kAIO26g" target="_blank" rel="noopener noreferrer" class="solid">Demo</a>
+              <a href="https://github.com/fromearth03/Future-Lens.git" target="_blank" rel="noopener noreferrer">Code</a>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
 
-    </div>
+      <footer class="site-footer">
+        <p>&copy; 2026 Ali Akbar &middot; Islamabad, Pakistan</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="skills.html">Skills</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="hobbies.html">Hobbies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </footer>
+  </main>
+
+  <div class="lightbox" id="shot-stellar-1">
+    <a class="lightbox-backdrop" href="#gallery" aria-label="Close"></a>
+    <a class="lightbox-close" href="#gallery" aria-label="Close">&times;</a>
+    <figure>
+      <img src="images/projects/stellar-trace1.jpg" alt="StellarTrace - Search Interface">
+      <figcaption><strong>StellarTrace - Search Interface</strong>Landing view of my ArXiv research-paper search engine. Each planet is a Three.js body; selecting one filters the corpus before the C++ backend ranks the results.</figcaption>
+    </figure>
   </div>
-
-  <footer class="site-footer">
-    <div class="container clearfix">
-      <p class="footer-text">&copy; 2026 Ali Akbar, Islamabad, Pakistan</p>
-      <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="hobbies.html">Hobbies</a></li>
-          <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </footer>
-
+  <div class="lightbox" id="shot-stellar-2">
+    <a class="lightbox-backdrop" href="#gallery" aria-label="Close"></a>
+    <a class="lightbox-close" href="#gallery" aria-label="Close">&times;</a>
+    <figure>
+      <img src="images/projects/stellar-trace2.jpg" alt="StellarTrace - Ranked Results">
+      <figcaption><strong>StellarTrace - Ranked Results</strong>Results returned by the C++ engine, which implements inverted indexing and Google-style ranking over ArXiv metadata.</figcaption>
+    </figure>
+  </div>
+  <div class="lightbox" id="shot-rideflow">
+    <a class="lightbox-backdrop" href="#gallery" aria-label="Close"></a>
+    <a class="lightbox-close" href="#gallery" aria-label="Close">&times;</a>
+    <figure>
+      <img src="images/projects/rideflow.jpg" alt="RideFlow - Admin Dashboard">
+      <figcaption><strong>RideFlow - Admin Dashboard</strong>Role-based administrator view of the ride management platform: live fleet counters and a recent-rides table backed by PostgreSQL with Flyway migrations.</figcaption>
+    </figure>
+  </div>
+  <div class="lightbox" id="shot-cubesat">
+    <a class="lightbox-backdrop" href="#gallery" aria-label="Close"></a>
+    <a class="lightbox-close" href="#gallery" aria-label="Close">&times;</a>
+    <figure>
+      <img src="images/projects/cubesat.jpg" alt="CubeSat Remote Sensing Simulation">
+      <figcaption><strong>CubeSat Remote Sensing Simulation</strong>An AGI STK simulation over the Baltoro, Biafo and Siachen glaciers, showing the orbital track and the sensor footprint used for coverage analysis.</figcaption>
+    </figure>
+  </div>
+  <div class="lightbox" id="shot-brainfuck">
+    <a class="lightbox-backdrop" href="#gallery" aria-label="Close"></a>
+    <a class="lightbox-close" href="#gallery" aria-label="Close">&times;</a>
+    <figure>
+      <img src="images/projects/brainfuck.jpg" alt="Brainf*ck Interpreter and RISC-V Compiler">
+      <figcaption><strong>Brainf*ck Interpreter &amp; RISC-V Compiler</strong>The interpreter running a program alongside the generated RISC-V assembly, produced by the code generator I wrote in C++.</figcaption>
+    </figure>
+  </div>
+  <div class="lightbox" id="shot-wardrobe">
+    <a class="lightbox-backdrop" href="#gallery" aria-label="Close"></a>
+    <a class="lightbox-close" href="#gallery" aria-label="Close">&times;</a>
+    <figure>
+      <img src="images/projects/wardrobe.jpg" alt="AI Wardrobe Manager">
+      <figcaption><strong>AI Wardrobe Manager</strong>A Java Swing desktop client that catalogues clothing items and proposes outfit combinations from stored preferences.</figcaption>
+    </figure>
+  </div>
+  <div class="lightbox" id="shot-futurelens">
+    <a class="lightbox-backdrop" href="#gallery" aria-label="Close"></a>
+    <a class="lightbox-close" href="#gallery" aria-label="Close">&times;</a>
+    <figure>
+      <img src="images/projects/futurelens.jpg" alt="FutureLens Prediction System">
+      <figcaption><strong>FutureLens Prediction System</strong>Forecast dashboard covering stock markets, cryptocurrency, energy consumption and population growth, each projected with statistical models over historical series.</figcaption>
+    </figure>
+  </div>
+  <script>
+    function paintThemeLabels() {
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      var nodes = document.querySelectorAll('[data-theme-label]');
+      for (var i = 0; i < nodes.length; i++) { nodes[i].textContent = light ? 'Light' : 'Dark'; }
+    }
+    function toggleTheme() {
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      var next = light ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+      paintThemeLabels();
+    }
+    paintThemeLabels();
+  </script>
 </body>
 </html>
